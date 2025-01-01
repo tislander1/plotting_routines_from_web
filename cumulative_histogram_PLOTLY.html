@@ -1,0 +1,23 @@
+<head>
+	<!-- Load plotly.js into the DOM -->
+	<script src='https://cdn.plot.ly/plotly-2.35.2.min.js'></script>
+</head>
+
+<body>
+	<div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+</body>
+
+<script>
+var x = [];
+for (var i = 0; i < 500; i ++) {
+	x[i] = Math.random();
+}
+
+var trace = {
+    x: x,
+    type: 'histogram',
+	cumulative: {enabled: true}
+  };
+var data = [trace];
+Plotly.newPlot('myDiv', data);
+</script>
